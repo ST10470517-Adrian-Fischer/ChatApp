@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="MessageTest" time="0.07" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="MessageTest" time="0.082" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="ZA"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\nolaf\AppData\Local\Temp\surefire5430514265548615305\surefirebooter-20250624134008915_3.jar C:\Users\nolaf\AppData\Local\Temp\surefire5430514265548615305 2025-06-24T13-40-08_793-jvmRun1 surefire-20250624134008915_1tmp surefire_0-20250624134008915_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\nolaf\AppData\Local\Temp\surefire10409835121102916190\surefirebooter-20250802115046391_3.jar C:\Users\nolaf\AppData\Local\Temp\surefire10409835121102916190 2025-08-02T11-50-46_278-jvmRun1 surefire-20250802115046391_1tmp surefire_0-20250802115046391_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="MessageTest"/>
     <property name="surefire.test.class.path" value="C:\Users\nolaf\OneDrive\Documents\NetBeansProjects\regsitration\target\test-classes;C:\Users\nolaf\OneDrive\Documents\NetBeansProjects\regsitration\target\classes;C:\Users\nolaf\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\nolaf\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\nolaf\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\nolaf\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\nolaf\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\nolaf\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\nolaf\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;C:\Users\nolaf\.m2\repository\org\json\json\20230227\json-20230227.jar;C:\Users\nolaf\.m2\repository\org\eclipse\scout\rt\org.eclipse.scout.json\25.1.6\org.eclipse.scout.json-25.1.6.jar;C:\Users\nolaf\.m2\repository\one\xingyi\json\1.1\json-1.1.jar;C:\Users\nolaf\.m2\repository\one\xingyi\rest\1.1\rest-1.1.jar;C:\Users\nolaf\.m2\repository\one\xingyi\rest\1.1\rest-1.1-tests.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\nolaf\AppData\Local\Temp\surefire5430514265548615305\surefirebooter-20250624134008915_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\nolaf\AppData\Local\Temp\surefire10409835121102916190\surefirebooter-20250802115046391_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -60,35 +60,37 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testreturnallMessagedetails" classname="MessageTest" time="0.024">
+  <testcase name="testreturnallMessagedetails" classname="MessageTest" time="0.032">
     <system-out><![CDATA[returnallmessagedetails
 +276969 sent a message to: +2783784
 ]]></system-out>
   </testcase>
-  <testcase name="testGetlongestmessage" classname="MessageTest" time="0.006">
+  <testcase name="testGetlongestmessage" classname="MessageTest" time="0.005">
     <system-out><![CDATA[getlongestmessage
 +276969 sent a message to: +2783784
 All messages cleared.
 ]]></system-out>
   </testcase>
-  <testcase name="testSearchwithMessageID" classname="MessageTest" time="0.006">
+  <testcase name="testSearchwithMessageID" classname="MessageTest" time="0.007">
     <system-out><![CDATA[searchwithMessageID
 All messages cleared.
 ]]></system-out>
   </testcase>
-  <testcase name="testDeleteByhash" classname="MessageTest" time="0.003">
+  <testcase name="testDeleteByhash" classname="MessageTest" time="0.004">
     <system-out><![CDATA[deleteByhash
++276969 sent a message to: +2783784
 All messages cleared.
 ]]></system-out>
   </testcase>
-  <testcase name="testGetallMessagesArray" classname="MessageTest" time="0.002">
+  <testcase name="testGetallMessagesArray" classname="MessageTest" time="0.001">
     <system-out><![CDATA[getallMessagesArray
 +276969 sent a message to: +2702938463
 All messages cleared.
 ]]></system-out>
   </testcase>
   <testcase name="testSearchbyrecipient" classname="MessageTest" time="0.003">
-    <system-out><![CDATA[All messages cleared.
+    <system-out><![CDATA[+276969 sent a message to: +2783784
+All messages cleared.
 ]]></system-out>
   </testcase>
 </testsuite>

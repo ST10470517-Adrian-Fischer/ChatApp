@@ -8,11 +8,10 @@ package com.mycompany.mavenproject5;
  *
  * @author nolaf
  */
-
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class TestPOE {
+public class Chatapp {
 
     public static void main(String[] args) {
 
@@ -64,7 +63,7 @@ public class TestPOE {
                 System.out.println("How many messages do you want to enter");
 
                 numberofMessages = input.nextInt();
-                messages.setArray(numberofMessages);
+                messages.setBuilder();
                 for (int j = 0; j < numberofMessages; j++) {//this for loop will run until all the chosen number of messages have been sent
                     input.nextLine();
                     do {//this do while will loop if the messages or recipient numbers are  incorrectly formatted
@@ -116,4 +115,3 @@ public class TestPOE {
         }
     }
 }
-

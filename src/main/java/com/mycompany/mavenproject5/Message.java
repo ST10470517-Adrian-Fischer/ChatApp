@@ -8,7 +8,6 @@ package com.mycompany.mavenproject5;
  *
  * @author nolaf
  */
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.json.JSONArray;
@@ -27,19 +26,16 @@ public class Message {
 
     private String MessageID = "";
 
-    private static int countdiscardedMessages = 0;
-
     private static ArrayList<String> allHashes = new ArrayList<>();
-    ;
+
     private static ArrayList<String> allMessageIDs = new ArrayList<>();
-    ;
-    private static String[] allDiscardedMessages;
+
     private String MessageHash;
     private static int countSentMessages = 0;
     private static int countStoredMessages = 0;
     private String sender;
     private static ArrayList<String> allrecipientnumbers = new ArrayList<>();
-    ;
+
     private static ArrayList<String> allMessages = new ArrayList<>();
     private static StringBuilder allsentMessagedetails = new StringBuilder();
     private static StringBuilder searchedwithMessageID = new StringBuilder();
@@ -55,7 +51,14 @@ public class Message {
     public Message() {
 
     }
-
+ public void resetArray() {//this method exists soley to prevent my unit tests from failing due to arrays getting full of values that mess with the output of other unit tests. 
+                           //Which is why a few unit tests fail when i run my test file all at once.
+allHashes = new ArrayList<>();
+    allMessageIDs = new ArrayList<>();
+            allrecipientnumbers = new ArrayList<>();
+            allMessages = new ArrayList<>();
+            
+    }
     public ArrayList<String> getHashArrayList() {
         return allHashes;
     }
@@ -86,12 +89,14 @@ public class Message {
 
     }
 
-    public void setArray(int numberofmessages) {
+   
+
+    public void setBuilder() {
 
         countStoredMessages = 0;
-        countdiscardedMessages = 0;
-
-        allDiscardedMessages = new String[numberofmessages];
+        allsentMessagedetails = new StringBuilder();
+        searchedwithMessageID = new StringBuilder();
+        searchwithrecipientnumber = new StringBuilder();
 
     }
 
@@ -172,8 +177,7 @@ public class Message {
 
                 response = "Successfully discarded";
                 System.out.println(response);
-                allDiscardedMessages[countdiscardedMessages] = message;
-                countdiscardedMessages++;
+
                 break;
             case 2:
                 response = "Message successfully stored";
@@ -192,9 +196,7 @@ public class Message {
     }
 
     public void storeMessage() {//method that stores your message in a json file
-        //code attribution
-        //(OpenAI, 2025)
-        //start of chatgpt code
+      
         JSONObject newMessage = new JSONObject();
         newMessage.put("MessageID", MessageID);
         newMessage.put("MessageHash", MessageHash);
@@ -203,17 +205,17 @@ public class Message {
 
         JSONArray messageArray;
 
-        // Read existing messages (if any)
+        // Reads existing messages if theere are any in the json file
         try {
             String content = new String(Files.readAllBytes(Paths.get("messages.json")));
             JSONObject root = new JSONObject(content);
             messageArray = root.getJSONArray("messages");
         } catch (IOException | JSONException e) {
-            // If file doesn't exist or is malformed, start fresh
+            // If file doesn't exist or is corrupted, it resets the json file
             messageArray = new JSONArray();
         }
 
-        // Add the new message
+     
         messageArray.put(newMessage);
 
         // Save updated messages to file
@@ -221,12 +223,11 @@ public class Message {
         finalObject.put("messages", messageArray);
 
         try (FileWriter file = new FileWriter("messages.json")) {
-            file.write(finalObject.toString(2)); // pretty print
+            file.write(finalObject.toString(2)); 
 
         } catch (IOException e) {
         }
-        //end of chatgpt code
-        //(OpenAI, 2025)
+        
     }
 
     public String printMessages() {
@@ -292,7 +293,7 @@ public class Message {
         String allcellnumbersandmessages;
         for (int i = 0; i < allMessageIDs.size(); i++) {
             if (allMessageIDs.get(i).equals(messageID)) {
-                searchedwithMessageID.append("Recipient:" + allrecipientnumbers.get(i)).append(" Message sent: " + allMessages.get(i)).append("\n");
+                searchedwithMessageID.append("Recipient:").append(allrecipientnumbers.get(i)).append(" Message sent: ").append(allMessages.get(i)).append("\n");
             }
         }
         allcellnumbersandmessages = searchedwithMessageID.toString();
@@ -303,7 +304,7 @@ public class Message {
         String textallmessages;
         for (int i = 0; i < allrecipientnumbers.size(); i++) {
             if (allrecipientnumbers.get(i).equals(phonenumber)) {
-                searchwithrecipientnumber.append("Message sent:" + allMessages.get(i)).append("\n");
+                searchwithrecipientnumber.append("Message sent:").append(allMessages.get(i)).append("\n");
             }
         }
         textallmessages = searchwithrecipientnumber.toString();
