@@ -6,7 +6,7 @@ package com.mycompany.mavenproject5;
 
 /**
  *
- * @author nolaf
+ * @author adrianf
  */
 
 public class Login {
