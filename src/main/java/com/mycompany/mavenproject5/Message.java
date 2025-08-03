@@ -1,7 +1,10 @@
 
 package com.mycompany.mavenproject5;
 
-
+/**
+ *
+ * @author adrianf
+ */
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.json.JSONArray;
