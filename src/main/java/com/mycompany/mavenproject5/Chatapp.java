@@ -1,10 +1,7 @@
 
 package com.mycompany.mavenproject5;
 
-/**
- *
- * @author adrianf
- */
+
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
